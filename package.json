@@ -1,0 +1,22 @@
+{
+  "name": "mcp-armor",
+  "version": "0.1.0",
+  "description": "Secure sandbox with limited permissions to host your MCP servers",
+  "main": "src/index.js",
+  "bin": {
+    "mcp-armor-npx": "./bin/mcp-armor-npx.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "chmod +x ./bin/mcp-armor-npx.js"
+  },
+  "keywords": [
+    "ai",
+    "mcp",
+    "model-context-protocol",
+    "security",
+    "sandbox"
+  ],
+  "author": "Dheeraj Pai <dheerajmpaicmu@gmail.com>",
+  "license": "ISC"
+}
