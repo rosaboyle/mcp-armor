@@ -1,4 +1,4 @@
-# mcp-armor-npx
+# mcp-armor
 
 A secure, sandboxed environment for running `npx` commands with caching.
 
@@ -21,15 +21,22 @@ A secure, sandboxed environment for running `npx` commands with caching.
 npm install -g mcp-armor
 ```
 
-After installation, you'll have access to the `mcp-armor-npx` command.
+After installation, you'll have access to two CLI commands:
+
+- `mcp-armor-npx` - The primary command
+- `npx-armor` - An alias for the same functionality
+
+Both commands function identically, choose whichever is easier to remember.
 
 ## Usage
 
-Use `mcp-armor-npx` exactly as you would use `npx`:
+Use either `mcp-armor-npx` or `npx-armor` exactly as you would use `npx`:
 
 ```bash
 # Run a package directly
 mcp-armor-npx cowsay "Hello, secure world!"
+# Or using the alias
+npx-armor cowsay "Hello, secure world!"
 
 # Run a specific version of a package
 mcp-armor-npx cowsay@2.0.0 "Version specific"
@@ -69,6 +76,20 @@ All commands run inside an isolated Docker container with:
 - Limited access to the host system
 - Only npm cache is shared with the host
 
+## Contributing
+
+Contributions are welcome! Feel free to:
+
+- Report bugs
+- Suggest features
+- Submit pull requests
+
+Please visit our [GitHub repository](https://github.com/rosaboyle/mcp-armor) to contribute.
+
 ## License
 
-ISC 
+ISC
+
+## Author
+
+Dheeraj Pai <dheerajmpaicmu@gmail.com> 

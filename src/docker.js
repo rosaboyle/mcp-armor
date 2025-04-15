@@ -40,7 +40,22 @@ function ensureDockerImage() {
       .trim();
     
     if (imageCheck === "" || imageCheck === "not_found") {
-      console.log('Building Docker image for mcp-armor-npx...');
+      console.log(`Docker image ${DOCKER_IMAGE_NAME} not found locally.`);
+      
+      // Try to pull from Docker Hub first
+      try {
+        console.log(`Trying to pull ${DOCKER_IMAGE_NAME} from Docker Hub...`);
+        execSync(`docker pull ${DOCKER_IMAGE_NAME}`, { 
+          stdio: 'inherit'
+        });
+        console.log('Docker image pulled successfully.');
+        return true;
+      } catch (pullError) {
+        console.log('Could not pull image from Docker Hub, will build locally.');
+      }
+      
+      // If pull fails, build locally
+      console.log('Building Docker image locally...');
       
       // Check if Dockerfile exists
       const dockerfilePath = path.join(PACKAGE_ROOT, 'Dockerfile');
@@ -59,7 +74,7 @@ function ensureDockerImage() {
     }
     return true;
   } catch (error) {
-    console.error('Error building Docker image:', error.message);
+    console.error('Error ensuring Docker image:', error.message);
     return false;
   }
 }

@@ -1,11 +1,10 @@
 {
-  "name": "mcp-armor",
+  "name": "mcp-armor-npx",
   "version": "0.1.0",
-  "description": "Secure sandbox with limited permissions to host your MCP servers",
+  "description": "A secure, sandboxed environment for running npx commands with caching",
   "main": "src/index.js",
   "bin": {
-    "mcp-armor-npx": "./bin/mcp-armor-npx.js",
-    "npx-armor": "./bin/mcp-armor-npx.js"
+    "mcp-armor-npx": "./bin/mcp-armor-npx.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,7 +15,9 @@
     "mcp",
     "model-context-protocol",
     "security",
-    "sandbox"
+    "sandbox",
+    "npx",
+    "docker"
   ],
   "repository": {
     "type": "git",
@@ -28,4 +29,4 @@
   },
   "author": "Dheeraj Pai <dheerajmpaicmu@gmail.com>",
   "license": "ISC"
-}
+} 
