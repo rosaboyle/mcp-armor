@@ -1,6 +1,6 @@
 {
-  "name": "mcp-armor",
-  "version": "0.1.0",
+  "name": "mcp-armor-npx",
+  "version": "0.1.1",
   "description": "Secure sandbox with limited permissions to host your MCP servers",
   "main": "src/index.js",
   "bin": {
